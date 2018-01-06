@@ -19,6 +19,8 @@ for filename in os.listdir(directory):
         
         with open(directory + "/" + filename, "r") as f:
             txt = f.read()
+        txt.replace("Calender", "Calendar").replace("Vacency", "Vacancy")
+        """
         idx_beg = txt.find(start_point)
         
         if idx_beg == -1:
@@ -30,6 +32,7 @@ for filename in os.listdir(directory):
             else:
                 #print idx_beg, idx_end
                 txt = txt[:idx_beg] + to_replace + txt[idx_end:]
+        """
         #break
         """
         txt = txt.replace("</body>", "")
