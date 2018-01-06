@@ -14,12 +14,13 @@ end_point = '<!--top header inserted here-->'
 #start_point = '<table border=0 style="top-margin:0 px;width:100%;overflow: hidden;background:white;font-size:16px;font-family:Arial;line-height: 150%;text-align:justify;margin:0px;height:500px">'
 #end_point = '</center>'
 for filename in os.listdir(directory):
-    if filename.endswith("html") and filename not in ["header_new.html" ,"footer.html", "index.html"]:
-
+    #if filename.endswith("html") and filename not in ["header_new.html" ,"footer.html", "index.html"]:
+    if filename.endswith("html"):
         
         with open(directory + "/" + filename, "r") as f:
             txt = f.read()
-        txt.replace("Calender", "Calendar").replace("Vacency", "Vacancy")
+        txt = txt.replace("CALENDER", "CALENDAR")
+        txt = txt.replace("VACENCY", "VACANCY")
         """
         idx_beg = txt.find(start_point)
         
